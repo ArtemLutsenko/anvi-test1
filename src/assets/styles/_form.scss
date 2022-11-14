@@ -1,0 +1,119 @@
+@import "_variables.scss";
+
+input{
+  position: relative;
+  border-radius: 5px;
+  padding: 17px 0 17px 50px;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 23px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  outline: 0;
+  width: 100%;
+}
+
+.form-control:hover input,
+.form-control:hover select,
+input:active,
+input:focus{
+  cursor: pointer;
+  border: 1px solid $primary;
+}
+
+.form-control{
+  display: flex;
+  position: relative;
+}
+.form-control:hover{
+  cursor: pointer;
+}
+.form-control:after{
+  position: absolute;
+  content: attr(ph);
+  top: 50%;
+  left: 50px;
+  font-weight: 300;
+  font-size: 19px;
+  transform: translateY(-50%);
+  transition: all 0.05s ease-in;
+}
+
+.form-control.full input,
+.form-control.full select{
+  padding-bottom: 11px;
+  padding-top: 23px;
+}
+.form-control.full:after{
+  font-weight: 300;
+  font-size: 11px;
+  color: #67D9B7;
+  top: 17px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.form-control:before{
+  position: absolute;
+  width: 50px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3px;
+  padding-left: 5px;
+}
+
+
+///checkbox
+.form-control__checkbox{
+  display: flex;
+  align-items: center;
+
+  label{
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+
+[type="checkbox"] {
+display: none;
+}
+[type="checkbox"] + label {
+ cursor: pointer;
+}
+[type="checkbox"] + label::before {
+  width: 20px;
+  height: 20px;
+  content: "";
+  display: inline-block;
+
+  border: 1px solid #67D9B7;
+  box-shadow: 0px 28px 25px -25px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  margin-right: 11px;
+  cursor: pointer;
+}
+[type="checkbox"]:checked+label::before {
+  background-color: $primary;
+  content: url("@/assets/icons/check.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
